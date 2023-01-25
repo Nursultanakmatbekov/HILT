@@ -1,7 +1,7 @@
 package com.example.hilt.di
 
 import com.example.hilt.data.remote.api.PhotoApiService
-import com.example.hilt.data.remote.api.RetrofitClient
+import com.example.hilt.data.remote.RetrofitClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

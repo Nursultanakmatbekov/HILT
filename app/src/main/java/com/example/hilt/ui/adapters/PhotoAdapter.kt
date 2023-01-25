@@ -1,4 +1,4 @@
-package com.example.hilt.data.adapters
+package com.example.hilt.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

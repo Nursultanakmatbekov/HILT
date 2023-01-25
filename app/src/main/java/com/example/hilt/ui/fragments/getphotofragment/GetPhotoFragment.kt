@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.hilt.R
-import com.example.hilt.data.adapters.PhotoAdapter
 import com.example.hilt.databinding.FragmentGetPhotoBinding
+import com.example.hilt.ui.adapters.PhotoAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,19 +31,19 @@ class GetPhotoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
+        setOnClickListeners()
         setUpRequests()
         setUpObserves()
-        setOnClickListeners()
+    }
+
+    private fun initialize() {
+        binding?.recView?.adapter = photoAdapter
     }
 
     private fun setOnClickListeners() {
         binding?.btnAdd?.setOnClickListener {
             findNavController().navigate(R.id.action_getPhotoFragment_to_photoFragment)
         }
-    }
-
-    private fun initialize() {
-        binding?.recView?.adapter = photoAdapter
     }
 
     private fun setUpRequests() {
